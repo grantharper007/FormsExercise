@@ -12,6 +12,7 @@
             <legend>Customer Experience Survey</legend>
             <label for="storeNum">Store Number:</label>
             <select name="storeNum" id="storeNum">
+                <option hidden>Please select a store number</option>
                 <option value="3109">3109</option>
                 <option value="2421">2421</option>
                 <option value="5357">5357</option>
@@ -19,7 +20,7 @@
             <fieldset>
                 <legend>When you visited:</legend>
                 <label for="dateVisited">Date Visited:</label>
-                <input type="date" name="dateVisited" id="dateVisited">
+                <input type="date" name="dateVisited" id="dateVisited" min="2022-01-01" max="2022-12-31">
                 <br>
                 <label for="time">Time:</label>
                 <input type="time" name="time" id="time">
@@ -34,7 +35,7 @@
                 <input type="radio" name="satisfaction" id="satisfied">
                 <label for="satisfied">Satisfied</label>
                 <br>
-                <input type="radio" name="satisfaction" id="neither">
+                <input type="radio" checked=true name="satisfaction" id="neither">
                 <label for="neither">Neither Satisfied nor Dissatisfied</label>
                 <br>
                 <input type="radio" name="satisfaction" id="dissatisfied">
@@ -48,14 +49,24 @@
 
             <label for="timeVisited">Times Visited:</label>
             <br>
-            <input type="number" name="timeVisited" id="timeVisited">
+            <input type="number" name="timeVisited" id="timeVisited" min="1" max="30">
 
             <br>
 
-            <input type="checkbox" name="userAgree" id="userAgree">
+            <input type="checkbox" name="userAgree" id="userAgree" required>
             <label for="userAgree">Please check the box if you would be willing to be contacted about your experience</label>
 
             <br>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" pattern="5-10" autofocus required title="Please enter a password that is 5 to 10 characters in length">
+
+            <br>
+            
+            <input type="reset" value="Reset">
+
+            <br>
+
             <button>Submit</button>
         </fieldset>
     </form>
